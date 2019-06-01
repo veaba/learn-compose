@@ -1,5 +1,3 @@
-# Docker compose
-
 ## Docker compose 概览
 预计阅读时间：5分钟
 正在查找Compose文件引用？[请在此处查找最新版本](https://docs.docker.com/compose/compose-file/)。
