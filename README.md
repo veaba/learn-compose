@@ -31,6 +31,7 @@
     - [编写CLI环境变量](docs/compose_cli_environment_variables)
     - [命令行完成](docs/command-line_completion.md)
     - [docker-compose 命令行](docs/compose_command.md)
+- [Docker-compose file文件应用 TODO]()
 - [Docker堆栈和分布式应用程序包]()
 - [在Swarm中使用Compose TODO]()
 - [环境文件 TODO]()
