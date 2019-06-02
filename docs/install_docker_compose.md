@@ -12,7 +12,7 @@ docker compose依赖docker引擎完成任何有意义的工作，因此请确保
 按照下面的说明在Mac、Windows、Windows Server 2016或Linux系统上安装compose，或者查找其他选项，如使用pip python包管理器或将compose安装为容器。
 
 *安装其他版本*
->下面的说明概述了Compose当前稳定版本（v1.24.0）的安装。要安装不同版本的compose，请将给定的版本号替换为所需的版本号。撰写版本也列在GitHub的撰写库发布页面上，可直接下载。要安装Compose的预发行版，请参阅“安装预发行版本”部分。
+>下面的说明概述了Compose当前稳定版本（v1.24.0）的安装。要安装不同版本的compose，请将给定的版本号替换为所需的版本号。Compose版本也列在GitHub的Compose库发布页面上，可直接下载。要安装Compose的预发行版，请参阅“安装预发行版本”部分。
 
 ### 在MacOS 安装Compose
 
@@ -62,8 +62,6 @@ docker-compose version 1.24.0, build 01110ad01
 ### 在Linux 安装 Compose
 在Linux上，您可以从Github上的 [compose repository release](https://github.com/docker/compose/releases) 页面下载docker compose二进制文件。按照链接中的说明进行操作，这涉及到在终端中运行`curl`命令来下载二进制文件。这些分步说明也包括在下面。
 
-> 对于`Alpine`，需要以下依赖包：`py-pip`、`python-dev`、`libffi-dev`、`openssl-dev`、`gcc`、`libc-dev`和`make`。
-
 1. 运行此命令下载`Docker Compose`的当前稳定版本：
 
 ```shell
@@ -98,5 +96,79 @@ docker-compose version 1.24.0, build 1110ad01
 - [使用PIP安装](https://docs.docker.com/compose/install/#install-using-pip)
 - [作为容器安装](https://docs.docker.com/compose/install/#install-as-a-container)
 
-#### 
-#### 
+#### 使用PIP安装
+
+> 对于`Alpine`，需要以下依赖包：`py-pip`、`python-dev`、`libffi-dev`、`openssl-dev`、`gcc`、`libc-dev`和`make`。
+
+可以使用`pip`从[pypi](https://pypi.python.org/pypi/docker-compose)安装compose。如果使用`pip`安装，我们建议您使用[virtualenv](https://virtualenv.pypa.io/en/latest/)，因为许多操作系统都有与docker-compose依赖项冲突的python系统包。请参阅[virtualenv教程](http://docs.python-guide.org/en/latest/dev/virtualenvs/)开始。
+
+```shell
+pip install docker-compose
+```
+
+如果您不使用virtualenv，
+
+```shell
+sudo pip install docker-compose
+```
+
+> 需要PIP版本6.0或更高版本。
+
+
+#### 作为容器安装
+
+Compose也可以从一个小型的bash脚本包装器在容器中运行。要将compose安装为容器，请运行以下命令：
+
+```shell
+$ sudo curl -L --fail https://github.com/docker/compose/releases/download/1.24.0/run.sh -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+```
+
+### 安装预发布版本
+
+如果您有兴趣尝试一个预发布版本，您可以从[GitHub上的编写存储库发布页面](https://github.com/docker/compose/releases)下载候选版本。按照链接中的说明进行操作，这涉及到在终端中运行`curl`命令来下载二进制文件。
+
+从`“master”`分支构建的预发布版本也可从https://dl.bintray.com/docker compose/master/下载。
+
+> 预发布版本允许您在发布新功能之前试用它们，但可能不太稳定。
+
+
+## 升级改造
+
+如果要从compose 1.2或更早版本升级，请在升级compose之后删除或迁移现有容器。这是因为，从1.3版开始，Compose使用Docker标签跟踪容器，需要重新创建容器以添加标签。
+
+如果compose检测到创建的容器没有标签，它将拒绝运行，这样您就不会得到两组标签。如果要继续使用现有容器（例如，因为它们具有要保留的数据卷），可以使用compose 1.5.x使用以下命令迁移它们：
+
+```shell
+docker-compose migrate-to-labels
+```
+或者，如果您不担心保留它们，可以删除它们。Compose只会创建新的。
+
+```shell
+docker container rm -f -v myapp_web_1 myapp_db_1 ...
+```
+
+## 卸载
+
+要在使用`curl`安装时卸载`Docker Compose`，请执行以下操作：
+
+```shell
+sudo rm /usr/local/bin/docker-compose
+```
+要在使用`pip`安装时卸载Docker Compose，请执行以下操作：
+
+```shell
+pip uninstall docker-compose
+```
+
+> **有“权限被拒绝”错误吗？** 如果使用上述任一方法时出现`“权限被拒绝”`错误，则可能没有删除`Docker-Compose`的适当权限。要强制删除，请将`sudo`预先发送到上述任一命令，然后再次运行。
+
+## 下一步
+
+- [用户指南](https://docs.docker.com/compose/)
+- [入门](https://docs.docker.com/compose/gettingstarted/)
+- [开始使用Django](https://docs.docker.com/compose/django/)
+- [开始使用Rails](https://docs.docker.com/compose/rails/)
+- [开始使用WordPress](https://docs.docker.com/compose/wordpress/)
+- [命令行参考](https://docs.docker.com/compose/reference/)
+- [Compose文件引用](https://docs.docker.com/compose/compose-file/)

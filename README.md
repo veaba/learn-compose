@@ -16,11 +16,14 @@
 
 
 ------------------------------------------------------------------
-
+## 校错
+- 图像 -> image
+- 映像 -> 镜像
+- 撰写 -> Compose
 ## 目录
 
 - [Docker Compose 概览](docs/overview_of_docker_compose.md)
-- [安装 Compose]()
+- [安装 Compose](docs/install_docker_compose.md)
 - [开始 TODO]()
 - [Compose(docker-compose) CLI 参考 TODO]()
 - [Compose 文件参考 TODO]()
