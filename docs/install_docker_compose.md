@@ -100,6 +100,14 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 $ docker-compose --version
 docker-compose version 1.24.0, build 1110ad01
 ```
+
+
+### 在Ubuntu中安装docker-compose
+```shell
+$ apt install docker-compose
+$ docker-compose -version
+> docker-compose version 1.8.0 build unknown
+```
 ### 备选安装选项
 - [使用PIP安装](https://docs.docker.com/compose/install/#install-using-pip)
 - [作为容器安装](https://docs.docker.com/compose/install/#install-as-a-container)

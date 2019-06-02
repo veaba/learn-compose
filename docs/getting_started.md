@@ -2,10 +2,10 @@
 
 *预计阅读时间：10分钟*
 
-在这个页面上，您构建了一个运行在Docker Compose上的简单的python Web应用程序。应用程序使用flask框架并在redis中维护一个计数器。虽然示例使用了Python，但是这里演示的概念应该是可以理解的，即使您不熟悉它。
+在这个教程，您将构建一个运行在Docker Compose上的简单的python Web应用程序。应用程序使用`flask`框架并在`redis`中维护一个计数器。虽然示例使用了Python，但是这里演示的概念应该是可以理解的，即使您不熟悉它。
 
 ## 先决条件
-确保您已经安装了 [Docker Engine](https://docs.docker.com/install/)和 [Docker Compose](https://docs.docker.com/compose/install/)。您不需要安装python或redis，因为这两者都由 Docker镜像 提供。
+确保您已经安装了 [Docker Engine](https://docs.docker.com/install/)和 [Docker Compose](https://docs.docker.com/compose/install/)。您不需要安装`python`或`redis`，因为这两者都由 `Docker镜像` 提供。
 
 ## 步骤1：设置
 定义应用程序依赖项。
@@ -16,7 +16,7 @@
 $ mkdir composetest
 $ cd composetest
 ```
-2. 在项目目录中创建名为app.py的文件，并将其粘贴到：
+2. 在项目目录中创建名为`app.py`的文件，并将其粘贴到：
 ```python
 import time
 
@@ -55,11 +55,11 @@ def hello():
 flask
 redis
 ```
-## 步骤2：创建一个Dockerfile
+## 步骤2：创建一个Dockerfile 文件
 
 在这一步中，您将编写一个构建docker映像的dockerfile。镜像包含了python应用程序需要的所有依赖项，包括python本身。
 
-在项目目录中，创建名为`dockerfile`的文件并粘贴以下内容：
+在项目目录中，创建名为`Dockerfile`的文件并粘贴以下内容：
 
 ```shell
 FROM python:3.7-alpine
