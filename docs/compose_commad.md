@@ -5,20 +5,20 @@
 Usage: build [options] [--build-arg key=val...] [SERVICE...]
 
 Options:
-    --compress              Compress the build context using gzip.
-    --force-rm              Always remove intermediate containers.
-    --no-cache              Do not use cache when building the image.
-    --pull                  Always attempt to pull a newer version of the image.
-    -m, --memory MEM        Sets memory limit for the build container.
-    --build-arg key=val     Set build-time variables for services.
-    --parallel              Build images in parallel.
+    --compress              Compress the build context using gzip. 使用gzip压缩生成上下文
+    --force-rm              Always remove intermediate containers. 始终移除中间容器
+    --no-cache              Do not use cache when building the image. 构建镜像时不使用缓存
+    --pull                  Always attempt to pull a newer version of the image. 总是尝试提取镜像的新版本
+    -m, --memory MEM        Sets memory limit for the build container. 设置生成容器的内存限制
+    --build-arg key=val     Set build-time variables for services. 设置服务的生成时间变量
+    --parallel              Build images in parallel. 并行生成镜像
 ```
 
-服务被构建一次，然后被标记，默认为`project_service`。例如，`composetest_db`。如果compose文件指定了一个镜像名称，则会用该名称标记镜像，并预先替换任何变量。参见[变量替换](https://docs.docker.com/compose/compose-file/#variable-substitution)。
+服务被构建一次，然后被标记，默认为`project_service`。例如，`composetest_db`。如果compose文件指定了一个镜像名称，则会用该名称标记镜像，并预先替换任何变量。参见 [变量替换](https://docs.docker.com/compose/compose-file/#variable-substitution)。
 
 如果您更改了服务的dockerfile或其build目录的内容，请运行`docker-compose build`来重建它。
 
-## docker-compose bundle
+## docker-compose bundle 啥意思~
 ```shell
 Usage: bundle [options]
 
@@ -39,18 +39,19 @@ Options:
 Usage: config [options]
 
 Options:
-    --resolve-image-digests  Pin image tags to digests.
-    -q, --quiet              Only validate the configuration, don't print anything.
-    --services               Print the service names, one per line.
-    --volumes                Print the volume names, one per line.
-    --hash="*"               Print the service config hash, one per line.
+    --resolve-image-digests  Pin image tags to digests. 将图像标签固定到摘要
+    -q, --quiet              Only validate the configuration, don't print anything. 只验证配置，不打印任何内容。
+    --services               Print the service names, one per line. 打印服务名称，每行一个
+    --volumes                Print the volume names, one per line. 对一个卷打印the names，在线
+    --hash="*"               Print the service config hash, one per line. 获取到服务的hash值
                              Set "service1,service2" for a list of specified services
                              or use the wildcard symbol to display all services.
 ```
 
 验证并查看Compose文件。
-## docker-compose create
+## docker-compose create 
 
+创建容器，但没有运行，类似 `docker-compose up --no-start`
 
 ```shell
 Creates containers for a service.
@@ -119,8 +120,8 @@ Options:
 Usage: exec [options] [-e KEY=VAL...] SERVICE COMMAND [ARGS...]
 
 Options:
-    -d, --detach      Detached mode: Run command in the background.
-    --privileged      Give extended privileges to the process.
+    -d, --detach      Detached mode: Run command in the background. 分离模式：后台运行命令。
+    --privileged      Give extended privileges to the process. 我将特权扩展到进程
     -u, --user USER   Run the command as this user.
     -T                Disable pseudo-tty allocation. By default `docker-compose exec`
                       allocates a TTY.
@@ -297,8 +298,8 @@ Usage: rm [options] [SERVICE...]
 
 Options:
     -f, --force   Don't ask to confirm removal
-    -s, --stop    Stop the containers, if required, before removing
-    -v            Remove any anonymous volumes attached to containers
+    -s, --stop    Stop the containers, if required, before removing 
+    -v            Remove any anonymous volumes attached to containers 删除附加到容器的任何匿名卷
 ```
 
 删除停止的服务容器。

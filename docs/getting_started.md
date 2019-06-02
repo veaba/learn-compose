@@ -46,6 +46,8 @@ def hello():
 ```
 在本例中，`redis`是应用程序网络上redis容器的主机名。我们使用redis的默认端口`6379`。
 
+
+
 > **可能的错误** 
 > 注意`get_hit_count`函数的编写方式。如果Redis服务不可用，这个基本的重试循环允许我们多次尝试请求。当应用程序联机时，这在启动时很有用，但如果在应用程序的生命周期内需要随时重新启动Redis服务，这也会使我们的应用程序更有弹性。在集群中，这也有助于处理节点之间的瞬时连接丢失。
 
@@ -113,6 +115,8 @@ services:
 
 ## 步骤4：使用Compose功能构建和运行应用程序
 1. 从项目目录中，通过运行`docker-compose up`启动应用程序。
+> 在此之前, `docker-compose -f docker-compose.yml build`，否则可能出错
+
 ```shell
 $ docker-compose up
 Creating network "composetest_default" with the default driver
@@ -250,7 +254,22 @@ composetest_web_1     /bin/sh -c python app.py   Up      5000->5000/tcp
 
 ```shell
 $ docker-compose run web env
+>
+HOSTNAME=d6b2fdd00857
+TERM=xterm
+FLASK_ENV=development
+LANG=C.UTF-8
+GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
+PYTHON_VERSION=3.7.3
+PYTHON_PIP_VERSION=19.1.1
+FLASK_APP=app.py
+FLASK_RUN_HOST=0.0.0.0
+HOME=/root
+
+
 ```
+
+
 
 参见 `docker compose ——help` 查看其他可用命令。您还可以为bash和zsh shell[安装命令完成](https://docs.docker.com/compose/completion/)，这也显示了可用的命令。
 

@@ -1,7 +1,7 @@
 # 命令行完成
 *预计阅读时间：3分钟*
 
-compose附带bash和zsh shell的[命令完成](http://en.wikipedia.org/wiki/Command-line_completion)。
+compose附带bash和zsh shell的 [命令完成](http://en.wikipedia.org/wiki/Command-line_completion) 。
 
 ## 安装命令完成
 

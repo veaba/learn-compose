@@ -1,8 +1,13 @@
-version: "3"
+# 只需要更改app.py 就可以直接生效，不需要重启docker-compose
+version: '3'
 services:
   web:
     build: .
-    ports: 
+    ports:
       - "5000:5000"
+    volumes:
+      - .:/code
+    environment:
+      FLASK_ENV: development
   redis:
     image: "redis:alpine"
