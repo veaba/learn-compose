@@ -266,7 +266,7 @@ $ docker-compose down --volumes
 
 
 ## 下一步：
-- 接下来，尝试Django、Rails或WordPress的快速入门指南。
-- 浏览Compose命令的完整列表
-- Compose配置文件引用
-- 要了解有关卷和绑定装载的更多信息，请参阅在Docker中管理数据
+- 接下来，尝试 [Django](https://docs.docker.com/compose/django/)、[Rails](https://docs.docker.com/compose/rails/) 或[WordPress](https://docs.docker.com/samples/library/wordpress/)的快速入门指南。
+- [浏览Compose命令的完整列表](https://docs.docker.com/compose/reference/)
+- [Compose配置文件引用](https://docs.docker.com/compose/compose-file/)
+- 要了解有关卷和绑定装载的更多信息，请参阅在[Docker中管理数据](https://docs.docker.com/engine/admin/volumes/)
