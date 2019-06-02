@@ -14,7 +14,7 @@ Options:
     --parallel              Build images in parallel.
 ```
 
-服务被构建一次，然后被标记，默认为`project_service`。例如，`composetest_db`。如果compose文件指定了一个图像名称，则会用该名称标记图像，并预先替换任何变量。参见[变量替换](https://docs.docker.com/compose/compose-file/#variable-substitution)。
+服务被构建一次，然后被标记，默认为`project_service`。例如，`composetest_db`。如果compose文件指定了一个镜像名称，则会用该名称标记镜像，并预先替换任何变量。参见[变量替换](https://docs.docker.com/compose/compose-file/#variable-substitution)。
 
 如果您更改了服务的dockerfile或其build目录的内容，请运行`docker-compose build`来重建它。
 
@@ -31,7 +31,7 @@ Options:
 ```
 从Compose文件生成分布式应用程序包（DAB）。
 
-图像必须存储摘要，这需要与Docker注册表交互。如果没有为所有图像存储摘要，可以使用`docker-compose pull`或`docker-compose push`获取它们。要在捆绑时自动推送图像，请通过`--push-images`。只有指定了`build`选项的服务才会推送其图像。
+镜像必须存储摘要，这需要与Docker注册表交互。如果没有为所有镜像存储摘要，可以使用`docker-compose pull`或`docker-compose push`获取它们。要在捆绑时自动推送镜像，请通过`--push-images`。只有指定了`build`选项的服务才会推送其镜像。
 
 
 ## docker-compose config
@@ -83,7 +83,7 @@ Options:
     -t, --timeout TIMEOUT   Specify a shutdown timeout in seconds.
                             (default: 10)
 ```
-停止容器并删除`up`创建的容器、网络、卷和图像。
+停止容器并删除`up`创建的容器、网络、卷和镜像。
 
 默认情况下，只删除以下内容：
 - Compose文件中定义的服务容器
@@ -209,7 +209,7 @@ Options:
     --include-deps          Also pull services declared as dependencies
 ```
 
-拉取与`docker-compose.yml`或`docker-stack.yml`文件中定义的服务相关联的图像，但不基于这些图像启动容器。
+拉取与`docker-compose.yml`或`docker-stack.yml`文件中定义的服务相关联的镜像，但不基于这些镜像启动容器。
 
 例如，假设您有来自[quickstart:compose和rails示例](https://docs.docker.com/compose/rails/)的`docker-compose.yml`文件。
 
@@ -259,9 +259,9 @@ Usage: push [options] [SERVICE...]
 Options:
     --ignore-push-failures  Push what it can and ignores images with push failures.
 ```
-将图像推送到各自的服务 `registry/repository`
+将镜像推送到各自的服务 `registry/repository`
 假设如下：
-- 你在推一个你在本地建立的图像
+- 你在推一个你在本地建立的镜像
 - 您可以访问生成密钥
 ### 实例
 ```yml
@@ -486,7 +486,7 @@ Options:
 
 `docker-compose-up`命令聚合每个容器的输出（基本上运行`docker-compose logs-f`）。当命令退出时，所有容器都将停止。运行`docker-compose up -d`在后台启动容器并让它们继续运行。
 
-如果存在服务的现有容器，并且在容器创建后更改了服务的配置或图像，`docker-compose up`将通过停止并重新创建容器（保留已装入的卷）来获取更改。要防止compose接收更改，请使用`--no-recreate`标志。
+如果存在服务的现有容器，并且在容器创建后更改了服务的配置或镜像，`docker-compose up`将通过停止并重新创建容器（保留已装入的卷）来获取更改。要防止compose接收更改，请使用`--no-recreate`标志。
 
 如果要强制Compose停止并重新创建所有容器，请使用`--force`重新创建标志。
 

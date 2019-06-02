@@ -81,7 +81,7 @@ plugins=(... docker docker-compose
 根据到目前为止在命令行上键入的内容，它将完成：
 - 可用的`Docker-compose`命令
 - 假设一个特别命令可以使用
-- 在给定上下文中有意义的服务名称，例如具有正在运行或停止的实例的服务，或基于图像的服务，而基于Dockerfiles的服务。对于`docker-compose scale`，已完成的服务名称自动附加“=”号。
+- 在给定上下文中有意义的服务名称，例如具有正在运行或停止的实例的服务，或基于镜像的服务，而基于Dockerfiles的服务。对于`docker-compose scale`，已完成的服务名称自动附加“=”号。
 - 所选选项的参数。例如，`docker-compose kill-s`完成了一些信号，比如`siguup`和`sigusr1`。
 
 享受更快的作曲速度和更少的打字错误！

@@ -4,7 +4,7 @@
 ## docker(翻译进度：完成0% )
 - [veaba 的Docker 学习笔记](https://githuba.com/veaba/learn-docker)
 
-## docker-compose(翻译进度：完成0% )
+## docker-compose(翻译进度：完成30% )
 - 来源翻译：https://docs.docker.com/compose/overview/
 
 - [veaba翻译的docker-compose文档项目](/docs/docker-compose/docker-compose.md)
