@@ -1,13 +1,17 @@
 # 开始使用Docker Compose
+
 *预计阅读时间：10分钟*
+
 在这个页面上，您构建了一个运行在Docker Compose上的简单的python Web应用程序。应用程序使用flask框架并在redis中维护一个计数器。虽然示例使用了Python，但是这里演示的概念应该是可以理解的，即使您不熟悉它。
 
 ## 先决条件
-确保您已经安装了[Docker Engine](https://docs.docker.com/install/)和[Docker Compose](https://docs.docker.com/compose/install/)。您不需要安装python或redis，因为这两者都由docker images提供。
+确保您已经安装了 [Docker Engine](https://docs.docker.com/install/)和 [Docker Compose](https://docs.docker.com/compose/install/)。您不需要安装python或redis，因为这两者都由 Docker镜像 提供。
 
 ## 步骤1：设置
 定义应用程序依赖项。
+
 1. 为项目创建目录：
+
 ```shell
 $ mkdir composetest
 $ cd composetest

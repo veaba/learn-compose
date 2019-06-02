@@ -1,6 +1,6 @@
 ## Docker compose 概览
 预计阅读时间：5分钟
-正在查找Compose文件引用？[请在此处查找最新版本](https://docs.docker.com/compose/compose-file/)。
+> 正在查找Compose文件引用？[请在此处查找最新版本](https://docs.docker.com/compose/compose-file/)。
 
 Compose是用于定义和运行多容器Docker应用程序的工具。使用compose，可以使用yaml文件配置应用程序的服务。然后，通过一个命令，您可以从配置中创建和启动所有服务。要进一步了解Compose的所有功能，[请参阅功能列表](https://docs.docker.com/compose/overview/#features)。
 
@@ -12,7 +12,7 @@ Compose工作在所有环境中：生产、分段、开发、测试以及CI工�
 
 - 用`Dockerfile`定义应用程序的环境，以便在任何地方复制
 - 在`docker-compose.yml`中定义组成应用程序的服务，以便它们可以在单独的环境中一起运行。
-- 运行`docker compose up`和compose启动并运行整个应用程序。
+- 运行`docker-compose up`和compose启动并运行整个应用程序。
 
 一个 `docker-compose.yml`看起来如下：
 
@@ -68,7 +68,7 @@ compose使用项目名称将环境彼此隔离。您可以在几个不同的上�
 - 在CI服务器上，为了防止生成相互干扰，可以将项目名称设置为唯一的内部版本号
 - 在共享主机或dev主机上，防止可能使用相同服务名的不同项目相互干扰。
 
-默认项目名称是项目目录的基名称。您可以使用`-p`[命令行选项](https://docs.docker.com/compose/reference/overview/) 或`COMPOSE_PROJECT_NAME`[环境变量](https://docs.docker.com/compose/reference/envvars/#compose-project-name)设置自定义项目名称。
+默认项目名称是项目目录的基名称。您可以使用 `-p` [命令行选项](https://docs.docker.com/compose/reference/overview/) 或 `COMPOSE_PROJECT_NAME`[环境变量](https://docs.docker.com/compose/reference/envvars/#compose-project-name) 设置自定义项目名称。
 
 
 ### 创建容器时保留卷数据
@@ -79,31 +79,31 @@ Compose缓存用于创建容器的配置。重新启动未更改的服务时，C
 
 
 ### 变量和在环境之间移动组合
-Compose支持Compose文件中的变量。您可以使用这些变量为不同的环境或不同的用户自定义组合。有关详细信息，请[参阅变量](https://docs.docker.com/compose/compose-file/#variable-substitution)替换。
+Compose支持Compose文件中的变量。您可以使用这些变量为不同的环境或不同的用户自定义组合。有关详细信息，请 [参阅变量](https://docs.docker.com/compose/compose-file/#variable-substitution) 替换。
 
 ## 常见用例
 Compose可以用很多不同的方式。下面概述了一些常见的用例。
 
 ### 开发环境
-Compose文件提供了一种方法来记录和配置应用程序的所有服务依赖项（数据库、队列、缓存、Web服务API等）。使用组合命令行工具，您可以用一个命令（`docker compose up`）为每个依赖项创建和启动一个或多个容器。
+Compose文件提供了一种方法来记录和配置应用程序的所有服务依赖项（数据库、队列、缓存、Web服务API等）。使用组合命令行工具，您可以用一个命令（`docker-compose up`）为每个依赖项创建和启动一个或多个容器。
 
 这些特性一起为开发人员开始一个项目提供了一种方便的方法。Compose可以将多页的“开发人员入门指南”简化为单台机器可读的Compose文件和一些命令。
 
 ### 自动化测试环境
-任何持续部署或持续集成过程的一个重要部分是自动化测试套件。自动化的端到端测试需要一个运行测试的环境。Compose为您的测试套件提供了一种创建和销毁独立测试环境的方便方法。通过在[Compose文件](https://docs.docker.com/compose/compose-file/)中定义完整的环境，您只需几个命令即可创建和销毁这些环境：
+任何持续部署或持续集成过程的一个重要部分是自动化测试套件。自动化的端到端测试需要一个运行测试的环境。Compose为您的测试套件提供了一种创建和销毁独立测试环境的方便方法。通过在 [Compose文件](https://docs.docker.com/compose/compose-file/) 中定义完整的环境，您只需几个命令即可创建和销毁这些环境：
 
 ```shell
-$ docker-compose uo -d
+$ docker-compose up -d
 $ ./run_tests
 $ docker-compose down
 ```
 
 ### 单主机部署
-传统上，Compose一直专注于开发和测试工作流，但随着每个版本的发布，我们都在开发更多面向生产的特性。可以使用compose部署到远程Docker引擎。Docker引擎可以是提供[Docker Machine](https://docs.docker.com/machine/overview/)的单个实例，也可以是整个[Docker Swarm](https://docs.docker.com/engine/swarm/)集群。
+传统上，Compose 一直专注于开发和测试工作流，但随着每个版本的发布，我们都在开发更多面向生产的特性。可以使用compose部署到远程Docker引擎。Docker引擎可以是提供 [Docker Machine](https://docs.docker.com/machine/overview/) 的单个实例，也可以是整个 [Docker Swarm](https://docs.docker.com/engine/swarm/) 集群。
 
-有关使用面向生产的特性的详细信息，请参阅本文档中的在[生产中Compose](https://docs.docker.com/compose/production/)。
+有关使用面向生产的特性的详细信息，请参阅本文档中的在 [生产中Compose](https://docs.docker.com/compose/production/)。
 
 ## 发行说明
-要查看Docker Compose过去和当前版本的详细更改列表，请参阅[更改日志](https://github.com/docker/compose/blob/master/CHANGELOG.md)。
+要查看Docker Compose过去和当前版本的详细更改列表，请参阅 [更改日志](https://github.com/docker/compose/blob/master/CHANGELOG.md)。
 
 ## 获得帮助

@@ -1,17 +1,25 @@
 ## 安装Docker Compose
+
 预计阅读时间：7分钟
 
 您可以在MacOS、Windows和64位Linux上运行compose。
 
 ## 先决条件
-docker compose依赖docker引擎完成任何有意义的工作，因此请确保您在本地或远程安装了docker引擎，具体取决于您的设置。
+
+Docker Compose依赖 Docker Engine 完成任何有意义的工作，因此请确保您在本地或远程安装了docker引擎，具体取决于您的设置。
+
 - 在桌面系统（如Mac和Windows的Docker桌面）上，Docker Compose是桌面安装的一部分。
-- 在Linux系统上，首先按照[docker](https://docs.docker.com/install/#server)页面上的描述为您的操作系统安装docker，然后返回此处获取有关在Linux系统上安装compose的说明。
-- 要以非根用户身份运行compose，请参见将[docker管理为非根用户](https://docs.docker.com/install/linux/linux-postinstall/)。
+
+- 在Linux系统上，首先按照 [Docker](https://docs.docker.com/install/#server) 页面上的描述为您的操作系统安装docker，然后返回此处获取有关在Linux系统上安装compose的说明。
+
+- 要以非根用户身份运行compose，请参见将 [Docker管理为非根用户](https://docs.docker.com/install/linux/linux-postinstall/)。
+
 ## 安装Compose
+
 按照下面的说明在Mac、Windows、Windows Server 2016或Linux系统上安装compose，或者查找其他选项，如使用pip python包管理器或将compose安装为容器。
 
 *安装其他版本*
+
 >下面的说明概述了Compose当前稳定版本（v1.24.0）的安装。要安装不同版本的compose，请将给定的版本号替换为所需的版本号。Compose版本也列在GitHub的Compose库发布页面上，可直接下载。要安装Compose的预发行版，请参阅“安装预发行版本”部分。
 
 ### 在MacOS 安装Compose
